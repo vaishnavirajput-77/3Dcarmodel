@@ -1,0 +1,186 @@
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+}
+
+/* Top Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-links span {
+    cursor: pointer;
+    padding-bottom: 0.2rem;
+    transition: all 0.3s;
+}
+
+.nav-links span:hover,
+.nav-links span.active {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* Bottom Control Bar */
+.bottom-bar {
+    display: flex;
+    justify-content: center;
+    pointer-events: auto;
+    margin-bottom: 1rem;
+}
+
+.control-panel {
+    display: flex;
+    align-items: center;
+    background: var(--panel-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 0.5rem;
+    backdrop-filter: blur(10px);
+    gap: 1rem;
+}
+
+.panel-segment {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.panel-segment.border-right {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.panel-btn:hover {
+    color: white;
+}
+
+.main-action-btn {
+    background: linear-gradient(90deg, #0055ff, #00e5ff);
+    color: white;
+    border: none;
+    padding: 0.8rem 3rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+    transition: all 0.3s;
+}
+
+.main-action-btn:hover {
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+    transform: scale(1.05);
+}
+
+/* 3D Annotations */
+.annotation {
+    background: rgba(10, 15, 30, 0.8);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    pointer-events: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+}
+
+.annotation:hover {
+    background: rgba(0, 229, 255, 0.2);
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.annotation-dot {
+    width: 6px;
+    height: 6px;
+    background: #00e5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+.loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #00e5ff;
+    z-index: 100;
+    font-size: 2rem;
+    font-family: 'Orbitron';
+    letter-spacing: 0.2em;
+}
